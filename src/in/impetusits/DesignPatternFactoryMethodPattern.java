@@ -23,10 +23,10 @@ public class DesignPatternFactoryMethodPattern {
 
                 int choice = input.nextInt();
                 try {
-                    comp = ComputerFactory.getComputer(choice);
+                    comp = Computer.getComputer(choice);
                     System.out.println("Got :" + comp);
-                    System.out.println("Memory : " + comp.getMemory());
-                    System.out.println("HDD : " + comp.getHardDisk());
+//                    System.out.println("Memory : " + comp.getMemory());
+//                    System.out.println("HDD : " + comp.getHardDisk());
                     break;
                 } catch (ClassNotPreparedException e) {
                     System.out.println(e.getMessage());

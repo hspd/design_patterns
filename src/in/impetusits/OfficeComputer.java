@@ -5,21 +5,14 @@ package in.impetusits;
  * @author Hrishikesh Pisal
  */
 public class OfficeComputer extends Computer {
-
-    public OfficeComputer() {
-        harddisk = new SATA();
-        memory = new DDR2();
-    }
-
-  
-    @Override
-    protected HardDisk getHardDisk() {
-        return harddisk;
+@Override
+    protected HardDisk selectHardDisk() {
+       return  new SATA();
     }
 
     @Override
-    protected Memory getMemory() {
-        return memory;
+    Memory selectMemory() {
+        return new DDR2();
     }
 
     

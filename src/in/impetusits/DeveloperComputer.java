@@ -7,14 +7,20 @@ package in.impetusits;
  */
 public class DeveloperComputer extends Computer {
 
+    public DeveloperComputer() {
+        super();
+    }
+
    @Override
-    protected HardDisk selectHardDisk() {
-       return  new SSD();
+    public Memory setMemory() {
+        return new SDRM5();
     }
 
     @Override
-    Memory selectMemory() {
-        return new SDRM5();
+    public HardDisk setHardDisk() {
+        return new SATA();
     }
+
+
   
 }

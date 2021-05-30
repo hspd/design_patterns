@@ -6,14 +6,20 @@ package in.impetusits;
  */
 public class GamingComputer extends Computer {
 
-    @Override
-    protected HardDisk selectHardDisk() {
-       return  new SSD();
+    public GamingComputer() {
+        super();
     }
 
+    
     @Override
-    Memory selectMemory() {
+    public Memory setMemory() {
         return new SDRM5();
     }
 
+    @Override
+    public HardDisk setHardDisk() {
+        return new SSD();
+    }
+
+   
 }

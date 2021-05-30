@@ -8,44 +8,49 @@ import com.sun.jdi.ClassNotPreparedException;
  */
 abstract class Computer {
 
-    private HardDisk harddisk;
-    private Memory memory;
+    abstract protected HardDisk setHardDisk();
 
-    private void assembleComputer(){
-        harddisk = selectHardDisk();
-        memory = selectMemory();
-    }
-    
+    abstract protected Memory setMemory();
+
+//    public Computer() {
+//        harddisk = setHardDisk();
+//        memory = setMemory();
+//    }
+
+
     static Computer getComputer(int compType) {
-        Computer comp;
+        Computer computer;
         if (compType == 1) {
-            comp = new OfficeComputer();
+            computer = new OfficeComputer();
         } else if (compType == 2) {
-            comp =  new GamingComputer();
+            computer = new GamingComputer();
         } else if (compType == 3) {
-            comp =  new DeveloperComputer();
+            computer = new DeveloperComputer();
         } else {
             throw new ClassNotPreparedException("We do not have such computer as of now");
         }
-        comp.assembleComputer();
-        return comp;
+         computer.assembleComputer();
+        return computer;
     }
 
-    protected HardDisk getHardDisk() {
+    public HardDisk getHardDisk() {
         return harddisk;
     }
 
-    protected Memory getMemory() {
+    public Memory getMemory() {
         return memory;
     }
-
-    abstract protected HardDisk selectHardDisk();
-    abstract Memory selectMemory();
 
     @Override
     public String toString() {
         return "Computer{" + "harddisk=" + harddisk + ", memory=" + memory + '}';
     }
 
-    
+    private HardDisk harddisk;
+    private Memory memory;
+
+    private void assembleComputer() {
+     harddisk = setHardDisk();
+        memory = setMemory();  
+    }
 }

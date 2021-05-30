@@ -1,4 +1,3 @@
-
 package in.impetusits;
 
 /**
@@ -11,5 +10,5 @@ class HardDisk {
     public String toString() {
         return "SATA";
     }
-    
+
 }
